@@ -1,8 +1,8 @@
-const blogApp = (state={posts:[]}, action) => {
+const blogApp = (state={authors:[]}, action) => {
   switch(action.type){
-    case 'ADD_POST':
-    return Object.assign({},state,{posts:[...state.posts, {
-      title: action.title
+    case 'ADD_AUTHOR':
+    return Object.assign({},state,{authors:[...state.authors, {
+      name: action.name
     }]} )
     default:
     return state

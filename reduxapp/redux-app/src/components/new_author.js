@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import { bindActionCreators } from 'redux'
 import { connect} from 'react-redux'
-import addPost from '../actions/add_post.js'
+import addAuthor from '../actions/add_author.js'
 
-
-class NewPost extends Component{
+class NewAuthor extends Component{
 
   submitHandler(event){
     event.preventDefault()
-    this.props.addPost(event.target.firstChild.value)
+    this.props.addAuthor(event.target.firstChild.value)
     event.target.firstChild.value = ""
     //grabbing the input value in form
   }
@@ -16,7 +15,7 @@ class NewPost extends Component{
   render(){
     return(
       <form onSubmit={this.submitHandler.bind(this)}>
-        <input type='text' placeholder='blog title' ></input>
+        <input type='text' placeholder='author name' ></input>
         <button type='submit'>SUBMIT</button>
       </form>
     )
@@ -24,7 +23,7 @@ class NewPost extends Component{
 }
 
 // below is used on smart
-// because you want to use this props addPost
+// because you want to use this dot props dot addPost
 // connect connects to your store
 // store has dispatch
 // bindActionCreators converts actionCreators into a dispatch format
@@ -32,8 +31,8 @@ class NewPost extends Component{
 // connect makes either state or dispatch available to the (smart) component
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({addPost: addPost}, dispatch)
+  return bindActionCreators({addAuthor: addAuthor}, dispatch)
 }
 
-const SmartNewPost = connect(null, mapDispatchToProps)(NewPost)
-export default SmartNewPost
+const SmartNewAuthor = connect(null, mapDispatchToProps)(NewAuthor)
+export default SmartNewAuthor

@@ -1,7 +1,8 @@
-const addPost = (title)=>{
+const addPost = ({title, authorName})=>{
   return {
     type: 'ADD_POST',
-    title: title
+    title: title,
+    authorName: authorName,
   }
 }
 

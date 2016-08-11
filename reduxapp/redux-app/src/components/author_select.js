@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-
+import AuthorLis from './author_li.js'
 
 class AuthorSelect extends Component {
   render(){
     return(
-      <ul>
+      <select>
       {this.props.authors.map((author)=>{
-        return <AuthorLis key={author.name} name={author.name}/>
+        return <option value={author.name}>{author.name}</option>
       })}
-      </ul>
+      </select>
     )
   }
 }

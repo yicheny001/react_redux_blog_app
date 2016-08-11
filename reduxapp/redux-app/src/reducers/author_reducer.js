@@ -1,4 +1,4 @@
-const blogApp = (state={authors:[]}, action) => {
+const authorReducer = (state={authors:[]}, action) => {
   switch(action.type){
     case 'ADD_AUTHOR':
     return Object.assign({},state,{authors:[...state.authors, {
@@ -9,4 +9,4 @@ const blogApp = (state={authors:[]}, action) => {
   }
 }
 
-export default blogApp
+export default authorReducer

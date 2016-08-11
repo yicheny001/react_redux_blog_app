@@ -8,7 +8,7 @@ class NewPost extends Component{
 
   submitHandler(event){
     event.preventDefault()
-    this.props.addAuthor(event.target.firstChild.value)
+    this.props.addPost(event.target.firstChild.value)
     event.target.firstChild.value = ""
     //grabbing the input value in form
   }
